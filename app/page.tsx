@@ -1,65 +1,92 @@
+import Link from "next/link";
 import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
+    <div className="flex flex-col gap-24 pb-24">
+      {/* HERO */}
+      <section className="mx-auto flex max-w-7xl flex-col items-center gap-6 px-6 pt-24 text-center md:pt-32">
         <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
+          src="/images/avatar.webp"
+          alt="Mahpudeen"
+          width={96}
+          height={96}
+          className="h-24 w-24 rounded-full border-2 border-amber-500/40 object-cover"
           priority
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+        
+        <div className="flex flex-col gap-3">
+          <h1 className="font-heading text-4xl font-bold md:text-6xl">
+            Hi, I&apos;m <span className="text-amber-500">Mahpudeen</span>
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className="text-lg text-muted-foreground md:text-xl">
+            Frontend Developer. Builder. Lifelong Learner.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+
+        <p className="max-w-xl text-muted-foreground">
+          I build digital experiences and document my journey — work, life, investments, and everything in between.
+        </p>
+
+        <div className="flex gap-4">
+          <Link
+            href="/about"
+            className="rounded-md bg-amber-500 px-5 py-2.5 text-sm font-medium text-black transition-colors hover:bg-amber-400"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            About Me
+          </Link>
+          <Link
+            href="/work"
+            className="rounded-md border border-border px-5 py-2.5 text-sm font-medium transition-colors hover:bg-foreground/5"
           >
-            Documentation
-          </a>
+            See My Work
+          </Link>
         </div>
-      </main>
+      </section>
+
+      {/* ABOUT SNIPPET */}
+      <section className="mx-auto w-full max-w-7xl px-6">
+        <div className="rounded-xl border border-border p-8">
+          <p className="text-muted-foreground leading-relaxed">
+            I&apos;m a frontend developer based in Jakarta, Indonesia. I specialize in building modern web and mobile applications. 
+            This website is my digital garden — a living archive of my work, thoughts, and life journey.
+          </p>
+          <Link href="/about" className="mt-4 inline-block text-sm text-amber-500 hover:underline">
+            More about me →
+          </Link>
+        </div>
+      </section>
+
+      {/* CURRENTLY */}
+      <section className="mx-auto w-full max-w-7xl px-6">
+        <h2 className="font-heading text-2xl font-bold mb-6">Currently</h2>
+        <div className="grid gap-4 md:grid-cols-3">
+          {[
+            { label: "Working on", value: "Personal Website (mahpudeen.com)" },
+            { label: "Learning", value: "Next.js & React Native" },
+            { label: "Reading", value: "Latest manhwa updates" },
+          ].map((item) => (
+            <div key={item.label} className="rounded-xl border border-border p-6">
+              <p className="text-xs text-amber-500 font-medium uppercase tracking-wider mb-2">{item.label}</p>
+              <p className="text-sm text-muted-foreground">{item.value}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* CONTACT CTA */}
+      <section className="mx-auto w-full max-w-7xl px-6">
+        <div className="rounded-xl border border-amber-500/20 bg-amber-500/5 p-10 text-center">
+          <h2 className="font-heading text-2xl font-bold mb-3">Let&apos;s Connect</h2>
+          <p className="text-muted-foreground mb-6">Have a project in mind or just want to say hi?</p>
+          <Link
+            href="/contact"
+            className="rounded-md bg-amber-500 px-6 py-3 text-sm font-medium text-black transition-colors hover:bg-amber-400"
+          >
+            Get in Touch
+          </Link>
+        </div>
+      </section>
     </div>
   );
 }
