@@ -22,32 +22,12 @@ const navItems: NavItem[] = [
   {
     label: "About",
     href: "/about",
-    // children: [
-    //   { label: "Bio", href: "/about/bio", soon: true },
-    //   { label: "Now", href: "/about/now", soon: true },
-    //   { label: "Timeline", href: "/about/timeline", soon: true },
-    //   { label: "Uses", href: "/about/uses", soon: true },
-    // ],
   },
   {
     label: "Work",
     href: "/work",
-    children: [
-      { label: "Portfolio", href: "/work/portfolio", soon: true },
-      { label: "Projects", href: "/work/projects", soon: true },
-      { label: "Open Source", href: "/work/open-source", soon: true },
-      { label: "Speaking", href: "/work/speaking", soon: true },
-    ],
   },
-  {
-    label: "Writing",
-    href: "/writing",
-    children: [
-      { label: "Blog", href: "/writing/blog", soon: true },
-      { label: "TIL", href: "/writing/til", soon: true },
-      { label: "Snippets", href: "/writing/snippets", soon: true },
-    ],
-  },
+  { label: "Blog", href: "/blog" },
   {
     label: "Interests",
     href: "/interests",
@@ -92,7 +72,7 @@ const navItems: NavItem[] = [
     ],
   },
   { label: "Changelog", href: "/changelog", soon: true },
-  { label: "Contact", href: "/contact", soon: true },
+  { label: "Contact", href: "/contact", soon: false },
 ];
 
 export function Navbar() {
