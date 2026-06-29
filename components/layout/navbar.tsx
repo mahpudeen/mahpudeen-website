@@ -31,47 +31,19 @@ const navItems: NavItem[] = [
   {
     label: "Interests",
     href: "/interests",
-    children: [
-      { label: "Komik / Manhwa", href: "/interests/manhwa", soon: true },
-      { label: "Media", href: "/interests/media", soon: true },
-      { label: "Hobi", href: "/interests/hobi", soon: true },
-      { label: "Bookshelf", href: "/interests/bookshelf", soon: true },
-    ],
   },
   {
     label: "Life",
-    href: "/life",
-    children: [
-      { label: "Travels", href: "/life/travels", soon: true },
-      { label: "Kuliner", href: "/life/kuliner", soon: true },
-      { label: "Quotes", href: "/life/quotes", soon: true },
-      { label: "Bucket List", href: "/life/bucket-list", soon: true },
-    ],
+    href: "/life"
   },
   {
     label: "Finance",
     href: "/finance",
-    children: [
-      { label: "Investasi", href: "/finance/investasi", soon: true },
-      { label: "Financial Goals", href: "/finance/goals", soon: true },
-    ],
-  },
-  {
-    label: "Learn",
-    href: "/learn",
-    children: [
-      { label: "Certifications", href: "/learn/certifications", soon: true },
-      { label: "Courses", href: "/learn/courses", soon: true },
-    ],
   },
   {
     label: "Community",
     href: "/community",
-    children: [
-      { label: "Guestbook", href: "/community/guestbook", soon: true },
-    ],
   },
-  { label: "Changelog", href: "/changelog", soon: true },
   { label: "Contact", href: "/contact", soon: false },
 ];
 
